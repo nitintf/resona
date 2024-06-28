@@ -1,0 +1,4 @@
+{
+  "*.css": ["stylelint --fix", "yarn format:write"],
+  "*.{js,jsx,ts,tsx}": ["yarn format:write"]
+}
