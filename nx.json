@@ -43,13 +43,23 @@
       }
     }
   ],
+  "nxCloudAccessToken": "Y2Q4MTAxNDYtMDdkMi00NjU5LWE5NmUtOTU3NGNlYTczZjFkfHJlYWQtd3JpdGU=",
   "generators": {
     "@nx/next": {
       "application": {
-        "style": "@emotion/styled",
+        "style": "styled-components",
         "linter": "eslint"
       }
+    },
+    "@nx/react": {
+      "library": {}
     }
   },
-  "nxCloudAccessToken": "Y2Q4MTAxNDYtMDdkMi00NjU5LWE5NmUtOTU3NGNlYTczZjFkfHJlYWQtd3JpdGU="
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  }
 }
