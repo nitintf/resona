@@ -15,14 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      // paths for apps
-      "@web/*": ["apps/web/*"],
-
-      // Add paths for each package
       "@resona/core": ["packages/core/src/index.ts"],
       "@resona/theme": ["packages/theme/src/index.ts"],
       "@resona/ui": ["packages/ui/src/index.ts"],
-      "@resona/utils": ["packages/utils/src/index.ts"]
+      "@resona/utils": ["packages/utils/src/index.ts"],
+      "@web/*": ["apps/web/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

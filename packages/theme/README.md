@@ -14,7 +14,7 @@ For example, to use the `color.background` variable, you can call the `token` fu
 
 ```ts
 import { token } from '@resona/theme';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const backgroundColor = token('color.background');
 
@@ -23,5 +23,4 @@ const backgroundColor = token('color.background');
 const StyledDiv = styled.div`
   color: token('color.foreground');
 `;
-
 ```
