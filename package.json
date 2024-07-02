@@ -6,6 +6,12 @@
     "dev": "nx run web:dev",
     "format:check": "./scripts/format.sh --check",
     "format:write": "./scripts/format.sh --write",
+    "lint": "yarn nx:lint",
+    "test": "nx run-many --target=test --all",
+    "build": "nx run-many --target=build --all",
+    "build:package": "nx run-many --target=build --all --with-deps",
+    "nx:lint": "nx run-many --target=lint --all",
+    "nx:reset": "nx reset",
     "prepare": "husky"
   },
   "private": true,
