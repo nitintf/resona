@@ -20,7 +20,9 @@
       "@resona/ui": ["packages/ui/src/index.ts"],
       "@resona/utils": ["packages/utils/src/index.ts"],
       "@web/*": ["apps/web/*"]
-    }
+    },
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
+  "include": ["./types/**/*.d.ts"],
   "exclude": ["node_modules", "tmp"]
 }

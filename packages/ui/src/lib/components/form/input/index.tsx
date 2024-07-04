@@ -1,22 +1,60 @@
-import styled from 'styled-components';
+import React, { forwardRef, memo, useImperativeHandle, useRef } from 'react';
 
-import { token } from '@resona/theme';
+import { InputContainer, inputStyles } from './styles';
+import { type InputProps } from './types';
 
-export const Input = styled.input`
-  flex: 1;
-  height: 2.5rem; /* 40px */
-  width: 100%;
-  border-radius: ${token('radius.3')};
-  border: 1px solid ${token('color.border.input')};
-  background-color: ${token('color.background')};
-  padding: ${token('space.2')} ${token('space.3')}; /* 8px 12px */
-  font-size: ${token('font.size.sm')};
+const InputComponent = forwardRef((props: InputProps, ref) => {
+  const {
+    appearance = 'standard',
+    className,
+    elemAfterInput,
+    elemBeforeInput,
+    isCompact = false,
+    isDisabled = false,
+    isInvalid = false,
+    isMonospaced = false,
+    isReadOnly = false,
+    isRequired = false,
+    name,
+    placeholder,
+    width,
+    ...spreadProps
+  } = props;
 
-  &:focus-visible {
-    outline: none;
-  }
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-`;
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useImperativeHandle(ref, () => inputRef.current);
+
+  return (
+    <InputContainer
+      role="presentation"
+      data-disabled={isDisabled ? isDisabled : undefined}
+      data-invalid={isInvalid ? isInvalid : undefined}
+      className={className}
+      appearance={appearance}
+    >
+      {elemBeforeInput}
+      <input
+        {...spreadProps}
+        aria-invalid={isInvalid ? isInvalid : undefined}
+        css={inputStyles}
+        data-compact={isCompact ? isCompact : undefined}
+        data-monospaced={isMonospaced ? isMonospaced : undefined}
+        disabled={isDisabled}
+        name={name}
+        placeholder={placeholder}
+        readOnly={isReadOnly}
+        ref={inputRef}
+        required={isRequired}
+        {...spreadProps}
+      />
+      {elemAfterInput}
+    </InputContainer>
+  );
+});
+
+InputComponent.displayName = 'Input';
+
+export const Input = memo<InputProps & React.RefAttributes<unknown>>(
+  InputComponent
+);

@@ -1,14 +1,14 @@
 {
   "extends": "./tsconfig.json",
+  "files": [
+    "../../node_modules/@nx/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nx/react/typings/image.d.ts",
+    "../../node_modules/@nx/next/typings/image.d.ts",
+    "../../node_modules/next/index.d.ts"
+  ],
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
-      "next",
-      "@nx/next/typings/image.d.ts"
-    ]
+    "types": ["node", "react"]
   },
   "exclude": [
     "jest.config.ts",

@@ -1,6 +1,7 @@
 import WelcomeForm from './_forms/welcome';
 import { submitWelcomeForm } from './page.actions';
 import {
+  FormWrapper,
   LeftColumn,
   LeftRightPageLayout,
   RightColumn,
@@ -12,9 +13,11 @@ export default function Page() {
     <LeftRightPageLayout as="main">
       <RightColumn>
         <WelcomeFormContainer>
-          <form action={submitWelcomeForm}>
-            <WelcomeForm />
-          </form>
+          <FormWrapper>
+            <form action={submitWelcomeForm}>
+              <WelcomeForm />
+            </form>
+          </FormWrapper>
         </WelcomeFormContainer>
       </RightColumn>
       <LeftColumn />

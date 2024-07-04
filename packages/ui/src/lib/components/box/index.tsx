@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import {
-  space,
-  layout,
-  typography,
-  color,
-  flexbox,
-  SpaceProps,
-  LayoutProps,
-  TypographyProps,
   ColorProps,
   FlexboxProps,
+  LayoutProps,
+  SpaceProps,
+  TypographyProps,
+  color,
+  flexbox,
+  layout,
+  space,
+  typography,
 } from 'styled-system';
 
 export type BoxProps = SpaceProps &

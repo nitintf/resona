@@ -1,14 +1,20 @@
 'use client';
 
-import { variant } from 'styled-system';
+import styled, { css } from 'styled-components';
+import { flexBasis, flexGrow, flexWrap, variant } from 'styled-system';
+
 import { Box, BoxProps } from '../box';
-import styled from 'styled-components';
 
 interface FlexProps extends BoxProps {
   /**
    * If true, the flex container will center its item.
    */
   center?: boolean;
+
+  /**
+   * The gap between the flex items.
+   */
+  gap?: number | string;
 }
 
 const centerVariant = variant({
@@ -22,9 +28,15 @@ const centerVariant = variant({
   },
 });
 
+const gap = (props: FlexProps) => css({ gap: props.gap });
+
 export const Flex = styled(Box)<FlexProps>(
   {
     display: 'flex',
   },
+  gap,
+  flexWrap,
+  flexGrow,
+  flexBasis,
   centerVariant
 );

@@ -6,6 +6,9 @@ import { token } from '@resona/theme';
 import { Box, Flex } from '@resona/ui';
 
 export const LeftRightPageLayout = styled(Flex)`
+  --background: #fff;
+  --foreground: #000;
+
   flex-flow: row;
   place-content: stretch flex-start;
   height: inherit;
@@ -32,7 +35,7 @@ export const LeftColumn = styled(Flex)`
 
 export const RightColumn = styled(Flex)`
   flex-grow: 1;
-  background-color: white;
+  background-color: ${token('color.background')};
   height: inherit;
   overflow: hidden auto;
 
@@ -45,9 +48,15 @@ export const RightColumn = styled(Flex)`
 `;
 
 export const WelcomeFormContainer = styled(Box)`
-  max-width: 394px;
+  width: 424px;
   height: inherit;
   margin: 0px auto;
   text-align: center;
   padding: ${token('space.10')} ${token('space.6')};
+`;
+
+export const FormWrapper = styled(Flex)`
+  height: inherit;
+  flex-flow: column;
+  place-content: stretch center;
 `;
