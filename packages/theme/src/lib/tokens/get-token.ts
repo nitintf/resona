@@ -4,7 +4,7 @@ type Tokens = typeof tokens;
 
 const TOKEN_NOT_FOUND = '--token-not-found';
 
-export const token = <T extends keyof Tokens | string>(
+export const token = <T extends keyof Tokens | (string & NonNullable<unknown>)>(
   path: T,
   fallback?: string
 ) => {

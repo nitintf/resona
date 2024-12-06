@@ -1,3 +1,5 @@
+'use client';
+
 import React, { forwardRef, memo, useImperativeHandle, useRef } from 'react';
 
 import { InputContainer, inputStyles } from './styles';

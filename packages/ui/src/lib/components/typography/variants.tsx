@@ -18,7 +18,10 @@ export const colorVariant = variant({
     dim: {
       color: token('color.text.dim', '#6B778C'),
     },
+    danger: {
+      color: token('color.text.danger', '#DC2626'),
+    },
   },
 });
 
-export type ColorVariant = 'text' | 'inverse' | 'brand' | 'dim';
+export type ColorVariant = 'text' | 'inverse' | 'brand' | 'dim' | 'danger';

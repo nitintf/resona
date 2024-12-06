@@ -1,3 +1,5 @@
+'use client';
+
 import { PageContent, PageWrapper } from './styles';
 import { PageProps } from './types';
 

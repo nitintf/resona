@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef } from 'react';
 
 import { Spinner } from '../spinner';
@@ -12,12 +14,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       isLoading,
       shouldFitContainer,
       disabled,
+      type = 'button',
       ...props
     },
     ref
   ) => {
     return (
       <ButtonBase
+        type={type}
         variant={variant}
         size={size}
         aria-disabled={disabled ? disabled : undefined}

@@ -1,3 +1,5 @@
+'use client';
+
 import { Ref, forwardRef } from 'react';
 
 import {
@@ -13,9 +15,9 @@ export const Text = forwardRef(
   (
     {
       as = 'span',
-      align,
+      align = 'center',
       id,
-      size = 'medium',
+      size = 'base',
       weight,
       maxLines,
       color = 'text',
@@ -42,6 +44,9 @@ export const Text = forwardRef(
         style={{
           WebkitLineClamp: maxLines,
         }}
+        size={size}
+        align={align}
+        weight={weight}
         color={color}
         {...props}
       />

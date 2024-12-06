@@ -17,6 +17,15 @@ const nextConfig = {
     // For other options, see https://styled-components.com/docs/tooling#babel-plugin
     styledComponents: true,
   },
+  webpack: (config, { webpack }) => {
+    config.plugins.push(
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^pg-native$|^cloudflare:sockets$/,
+      })
+    );
+
+    return config;
+  },
 };
 
 const plugins = [

@@ -55,4 +55,9 @@ export interface InputProps
    * Sets maximum width of input.
    */
   width?: string | number;
+
+  /**
+   * If true, places the cursor at the end of the input on initial render on focus.
+   */
+  placeCursorAtEnd?: boolean;
 }

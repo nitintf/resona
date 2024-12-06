@@ -51,7 +51,6 @@ export const WelcomeFormContainer = styled(Box)`
   width: 424px;
   height: inherit;
   margin: 0px auto;
-  text-align: center;
   padding: ${token('space.10')} ${token('space.6')};
 `;
 
@@ -59,4 +58,5 @@ export const FormWrapper = styled(Flex)`
   height: inherit;
   flex-flow: column;
   place-content: stretch center;
+  gap: ${token('space.10')};
 `;

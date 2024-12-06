@@ -1,17 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
-import {
-  N10,
-  N20,
-  N30,
-  N40,
-  N50,
-  N60,
-  N200,
-  R200,
-  R400,
-} from '../../constants';
+import { N10, N20, N30, N40, N50, N60, N200, R400 } from '../../constants';
 
 const globalStylesCss = css`
   ${normalize}
@@ -30,11 +20,12 @@ const globalStylesCss = css`
     --text-disabled: ${N50};
 
     --color-text-subtle: ${N200};
+    --color-label: ${N200};
 
     --background-disabled: ${N10};
 
     --brand: rgb(91, 83, 255);
-    --brand-hover: rgb(87, 79, 241);
+    --brand-hover: rgb(83, 76, 215);
     --brand-soft: rgb(91, 83, 255, 0.1);
     --brand-soft-hover: rgb(91, 83, 255, 0.2);
     --button-outline-hover: rgb(91, 83, 255, 0.1);

@@ -16,13 +16,15 @@
     "baseUrl": ".",
     "paths": {
       "@resona/core": ["packages/core/src/index.ts"],
+      "@resona/core/*": ["packages/core/src/*"],
+      "@resona/db": ["packages/db/src/index.ts"],
       "@resona/theme": ["packages/theme/src/index.ts"],
       "@resona/ui": ["packages/ui/src/index.ts"],
       "@resona/utils": ["packages/utils/src/index.ts"],
       "@web/*": ["apps/web/*"]
     },
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "typeRoots": ["./@types", "./node_modules/@types"]
   },
-  "include": ["./types/**/*.d.ts"],
+  "include": ["./@types/**/*.d.ts"],
   "exclude": ["node_modules", "tmp"]
 }

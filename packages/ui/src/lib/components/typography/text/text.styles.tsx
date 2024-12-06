@@ -26,29 +26,17 @@ export const fontSizeVariant = variant({
   prop: 'size',
   key: 'fontSize',
   variants: {
-    large: {
-      fontSize: token(
-        'font.body.large',
-        'normal 400 16px/24px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, system-ui, "Helvetica Neue", sans-serif'
-      ),
+    xs: {
+      fontSize: token('font.size.xs', '12px'),
     },
-    medium: {
-      fontSize: token(
-        'font.body',
-        'normal 400 14px/20px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, system-ui, "Helvetica Neue", sans-serif'
-      ),
+    sm: {
+      fontSize: token('font.size.sm', '14px'),
     },
-    small: {
-      fontSize: token(
-        'font.body.small',
-        'normal 400 11px/16px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, system-ui, "Helvetica Neue", sans-serif'
-      ),
+    base: {
+      fontSize: token('font.size.base', '16px'),
     },
-    UNSAFE_small: {
-      fontSize: token(
-        'font.body.UNSAFE_small',
-        'normal 400 12px/16px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, system-ui, "Helvetica Neue", sans-serif'
-      ),
+    helper: {
+      fontSize: token('font.size.xs', '12px'),
     },
   },
 });
@@ -79,13 +67,13 @@ export const BaseText = styled.p<TextProps>`
   margin: 0;
   overflow-wrap: 'anywhere';
 
-  ${alignVariant}
+  ${space}
+  ${typography}
+
   ${fontSizeVariant}
   ${fontWeightVariant}
   ${colorVariant}
-
-  ${space}
-  ${typography}
+  ${alignVariant}
 `;
 
 export const truncationStyles = css({

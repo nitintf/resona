@@ -24,6 +24,7 @@ export const tokens = {
   'color.border.danger': '--border-danger',
 
   'color.background.disabled': '--background-disabled',
+  'color.label': '--color-label',
 
   // Font Sizes
   'font.size.xs': '--font-size-xs',

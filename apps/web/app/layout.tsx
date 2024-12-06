@@ -1,6 +1,5 @@
-import { AppThemeProvider } from '@resona/theme';
-
 import { AvenirNextFont } from '../utils/fonts';
+import { AppProvider } from './providers';
 
 export const metadata = {
   title: 'Resona',
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={AvenirNextFont.className}>
-        <AppThemeProvider>{children}</AppThemeProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );

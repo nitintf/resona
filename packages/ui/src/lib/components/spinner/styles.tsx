@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { N200 } from '@resona/theme';
+import { N0 } from '@resona/theme';
 
 const spinningTickAnimation = keyframes`
   from {
@@ -26,7 +26,7 @@ export const SpinnerTick = styled.span`
     width: 100%;
     height: 30%;
     border-radius: var(--radius-1);
-    background-color: ${N200};
+    background-color: ${N0};
   }
 
   &:where(:nth-child(1)) {

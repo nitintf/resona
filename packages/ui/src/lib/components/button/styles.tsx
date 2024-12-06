@@ -7,9 +7,10 @@ import { ButtonProps } from './type';
 
 const buttonDisabled = {
   cursor: 'not-allowed',
-  backgroundColor: token('color.button.disabled'),
-  color: token('color.text.disabled'),
-  boxShadow: `0 0 0 1px ${token('color.text.disabled')}`,
+};
+
+const buttonLoading = {
+  cursor: 'progress',
 };
 
 const buttonVariants = variant({
@@ -18,24 +19,21 @@ const buttonVariants = variant({
     solid: {
       color: 'white',
       bg: token('color.brand'),
-      '&:hover': {
+      '&:hover, &:focus-visible': {
         bg: token('color.brand.hover'),
       },
-      '&:disabled': {
-        ...buttonDisabled,
-      },
-      '&:disabled:hover': {
-        backgroundColor: token('color.button.disabled'),
-      },
       '&[data-loading="true"]': {
-        ...buttonDisabled,
+        ...buttonLoading,
       },
     },
     soft: {
       color: token('color.brand'),
       bg: token('color.brand.soft'),
-      '&:hover': {
+      '&:hover, &:focus-visible': {
         bg: token('color.button.soft.hover'),
+      },
+      '&[data-loading="true"]': {
+        ...buttonLoading,
       },
     },
     outline: {
@@ -43,15 +41,21 @@ const buttonVariants = variant({
       bg: 'transparent',
       border: '1px solid',
       borderColor: token('color.brand'),
-      '&:hover': {
+      '&:hover, &:focus-visible': {
         bg: token('color.button.outline.hover'),
+      },
+      '&[data-loading="true"]': {
+        ...buttonLoading,
       },
     },
     ghost: {
       color: token('color.brand'),
       bg: 'transparent',
-      '&:hover': {
+      '&:hover, &:focus-visible': {
         bg: token('color.button.outline.hover'),
+      },
+      '&[data-loading="true"]': {
+        ...buttonLoading,
       },
     },
   },
@@ -95,11 +99,26 @@ export const ButtonBase = styled.button<ButtonProps>(
     '&:hover': {
       textDecoration: 'none',
     },
-    '&:focus': {
-      outline: 'none',
+    '&:focus-visible': {
+      outline: `solid 1.8px ${token('color.brand')}`,
+      outlineOffset: '1.5px',
+      transition: 'outline-color 0.2s, outline-offset 0.2s',
     },
     '&[data-fit-container="true"]': {
       ...buttonFitContainer,
+    },
+    '&:active': {
+      transition: 'opacity 0.2s',
+      opacity: 0.7,
+    },
+    '&:disabled': {
+      ...buttonDisabled,
+    },
+    '&:disabled:hover': {
+      opacity: 0.65,
+    },
+    '&[data-loading="true"]': {
+      ...buttonLoading,
     },
   },
   buttonVariants,

@@ -30,4 +30,6 @@ export interface ButtonProps
    * Option to fit button width to its parent width.
    */
   shouldFitContainer?: boolean;
+
+  type?: 'button' | 'submit' | 'reset';
 }

@@ -28,7 +28,7 @@ export interface TextProps
   /**
    * Text size.
    */
-  size?: 'large' | 'medium' | 'small' | 'UNSAFE_small';
+  size?: 'xs' | 'sm' | 'base' | 'helper';
   /**
    * The [HTML `font-weight` attribute](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
    */

@@ -1,0 +1,25 @@
+{
+  "name": "db",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/db/src",
+  "projectType": "library",
+  "tags": ["type:utility", "scope:db"],
+  "// targets": "to see all targets run: nx show project db --web",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/db/**/*.ts"]
+      }
+    },
+    "seed": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "seed": {
+          "commands": ["ts-node libs/db/src/lib/seed.ts"]
+        }
+      }
+    }
+  }
+}
